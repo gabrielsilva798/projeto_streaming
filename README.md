@@ -124,7 +124,7 @@ tr_insert_episodio_serie
 
 |Scripts    |Clique aqui|
 |-----------|-----------|
-|DDL        |[Clique aqui](.\scripts\script_CREATE.sql)|
+|DDL        |[Clique aqui](.\scripts/script_CREATE.sql)|
 |Dados      |[Clique aqui](.\scripts\script_INSERT.sql)|
 |Views      |[Clique aqui](.\scripts\viewsprojetofina-finalizado.sql)|
 |Funções    |[Clique aqui](.\scripts\script_FUNCTION.sql)|
