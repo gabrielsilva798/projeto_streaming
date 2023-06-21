@@ -5,7 +5,7 @@ Este projeto tem intuito de demonstrar o conteudo aprendido em sala de aula no c
 <div align=center>
 
 ## Modelo Conceitual
-![Modelo conceitual](.\img\netflix.png)
+![Modelo conceitual](./img/netflix.png)
 </div>
 
 <div align=center>
@@ -124,13 +124,13 @@ tr_insert_episodio_serie
 
 |Scripts    |Clique aqui|
 |-----------|-----------|
-|DDL        |[Clique aqui](.\scripts/script_CREATE.sql)|
-|Dados      |[Clique aqui](.\scripts\script_INSERT.sql)|
-|Views      |[Clique aqui](.\scripts\viewsprojetofina-finalizado.sql)|
-|Funções    |[Clique aqui](.\scripts\script_FUNCTION.sql)|
-|Procedures |[Clique aqui](.\scripts\script_PROCEDURE.sql)|
-|Triggers   |[Clique aqui](.\scripts\script_TRIGGER.sql)|
-|Dumps      |[Clique aqui](.\Dumps\DumpFullDb_streaming21062023.sql)|
+|DDL        |[Clique aqui](./scripts/script_CREATE.sql)|
+|Dados      |[Clique aqui](./scripts/script_INSERT.sql)|
+|Views      |[Clique aqui](./scripts/viewsprojetofina-finalizado.sql)|
+|Funções    |[Clique aqui](./scripts/script_FUNCTION.sql)|
+|Procedures |[Clique aqui](./scripts/script_PROCEDURE.sql)|
+|Triggers   |[Clique aqui](./scripts/script_TRIGGER.sql)|
+|Dumps      |[Clique aqui](./Dumps/DumpFullDb_streaming21062023.sql)|
 
 
 
