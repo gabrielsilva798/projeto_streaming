@@ -833,11 +833,10 @@ END //
 DELIMITER ;
 
 -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-												-- TESTAR DAQUI EM DIANTE AINDA
-												-- TESTAR DAQUI EM DIANTE AINDA
-												-- TESTAR DAQUI EM DIANTE AINDA
+
 -- 12
 -- Procedure INSERT tb_pais_catalogo
+-- DROP PROCEDURE sp_insert_pais_catalogo
 DELIMITER //
 CREATE PROCEDURE sp_insert_pais_catalogo(id_do_pais INT, id_do_catalogo INT)
 	BEGIN
@@ -862,8 +861,8 @@ DELIMITER ;
 -- SELECT * FROM tb_pais_catalogo;
 -- DESCRIBE tb_pais_catalogo;
 /*
-CALL sp_pais_catalogo(5,4);
-CALL sp_pais_catalogo(4,3);
+CALL sp_insert_pais_catalogo(5,4);
+CALL sp_insert_pais_catalogo(4,3);
 */
 
 
@@ -872,8 +871,9 @@ CALL sp_pais_catalogo(4,3);
 
 
 
--- DROP PROCEDURE sp_update_pais_catalogo;
+
 -- Procedure UPDATE tb_pais_catalogo
+-- DROP PROCEDURE sp_update_pais_catalogo;
 DELIMITER //
 CREATE PROCEDURE sp_update_pais_catalogo(valor_id_pais INT, valor_id_catalogo INT, id_do_pais INT, id_do_catalogo INT)
 	BEGIN
@@ -900,7 +900,16 @@ CREATE PROCEDURE sp_update_pais_catalogo(valor_id_pais INT, valor_id_catalogo IN
 DELIMITER ;
 			
         
-        
+
+
+-- SELECT * FROM tb_pais_catalogo;
+-- DESCRIBE tb_pais_catalogo;
+/*
+CALL sp_update_pais_catalogo(5,4,5,3);
+CALL sp_update_pais_catalogo(4,3);
+*/
+
+
 
 
 
@@ -921,7 +930,16 @@ BEGIN
 	END IF;
 END //
 DELIMITER ;
+
+-- SELECT * FROM tb_pais_catalogo;
+-- DESCRIBE tb_pais_catalogo;
+/*
+CALL sp_delete_pais_catalogo(4,3);
+*/
 -- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+												-- TESTAR DAQUI EM DIANTE AINDA
+												-- TESTAR DAQUI EM DIANTE AINDA
+												-- TESTAR DAQUI EM DIANTE AINDA
 -- 13
 -- Procedure INSERT tb_endereco
 -- DROP PROCEDURE sp_insert_endereco;
