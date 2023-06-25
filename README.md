@@ -63,8 +63,8 @@ Este projeto tem intuito de demonstrar o conteudo aprendido em sala de aula no c
 ## Funções
 </div>
 
-- **fn_remover_acento:** Esta função realiza o cadastro de palavras sem acento. 
-- **fn_valida_texto:** Esta função realiza a validação do texto, quantidade de caracteres.
+- **fn_remover_acento:** Esta função remove acentos de palavras acentuadas e caracteres especiais por espaço vázio. 
+- **fn_valida_texto:** Esta função realiza a validação do texto, nele eu posso decidir a quantidade mínina de caractere que o usuário pode digitar, essa função possui a função citada acima dentro dos côdigos dela.
 
 <div align=center>
 

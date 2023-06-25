@@ -937,14 +937,12 @@ DELIMITER ;
 CALL sp_delete_pais_catalogo(4,3);
 */
 -- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-												-- TESTAR DAQUI EM DIANTE AINDA
-												-- TESTAR DAQUI EM DIANTE AINDA
-												-- TESTAR DAQUI EM DIANTE AINDA
 -- 13
 -- Procedure INSERT tb_endereco
 -- DROP PROCEDURE sp_insert_endereco;
 DELIMITER //
-CREATE PROCEDURE sp_insert_endereco(v_setor VARCHAR(45), n_rua INT, v_complemento VARCHAR(45), n_casa INT, v_cidade VARCHAR(45), id_do_pais INT, id_do_estado INT)
+CREATE PROCEDURE sp_insert_endereco(v_setor VARCHAR(45), n_rua INT, v_complemento VARCHAR(45), n_casa INT, v_cidade VARCHAR(45), 
+id_do_pais INT, id_do_estado INT)
 	BEGIN
 		IF
 			(v_setor  IS NULL ) OR (fn_valida_texto(v_setor, 3 )) = 0 THEN 
@@ -972,7 +970,7 @@ DELIMITER ;
 
 -- DESCRIBE tb_endereco;
 -- SELECT * FROM tb_endereco;
--- CALL sp_insert_endereco('oeste', 2, 'avenida das nações', 12, 'estrutural', 1, NULL);
+
 
 
 
@@ -980,12 +978,27 @@ DELIMITER ;
 
 -- Procedure UPDATE tb_endereco
 DELIMITER //
-CREATE PROCEDURE sp_update_endereco(valor_id INT, v_setor VARCHAR(45), n_rua INT, v_complemento VARCHAR(45), n_casa INT, v_cidade VARCHAR(45), id_do_pais INT, id_do_estado INT)
+CREATE PROCEDURE sp_update_endereco(valor_id INT, v_setor VARCHAR(45), n_rua INT, v_complemento VARCHAR(45), n_casa INT, v_cidade VARCHAR(45), 
+id_do_pais INT, id_do_estado INT)
 	BEGIN
 		IF NOT EXISTS
 			(SELECT id_endereco FROM tb_endereco WHERE id_endereco = valor_id) THEN
 			SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =  'ID_catalogo invalido';
-		
+		ELSEIF
+			(v_setor  IS NULL ) OR (fn_valida_texto(v_setor, 3 )) = 0 THEN 
+			SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =  'nome do setor muito curto';
+		ELSEIF
+			(v_complemento  IS NULL ) OR (fn_valida_texto(v_complemento, 5 )) = 0 THEN 
+			SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =  'nome do complemento muito curto';
+		ELSEIF
+			(v_cidade IS NULL ) OR (fn_valida_texto(v_cidade, 2 )) = 0 THEN 
+			SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =  'nome da cidade muito curto';
+		ELSEIF NOT EXISTS
+			(SELECT id_pais FROM tb_pais WHERE id_pais = id_do_pais) THEN
+			SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =  'ID_pais invalido';
+		ELSEIF NOT EXISTS
+			(SELECT id_estado FROM tb_estado WHERE id_estado = id_do_estado) AND (id_do_estado IS NOT NULL) THEN
+			SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =  'ID_estado invalido';
 		ELSE
 			UPDATE tb_endereco SET setor= v_setor, numero_rua = n_rua, complemento = v_complemento, numero_casa = n_casa,
 				cidade = v_cidade, id_pais = id_do_pais, id_estado = id_do_estado, dt_atualizacao = CURDATE()
@@ -995,7 +1008,7 @@ CREATE PROCEDURE sp_update_endereco(valor_id INT, v_setor VARCHAR(45), n_rua INT
 DELIMITER ;
 
 
-
+-- SELECT * FROM tb_endereco;
 
 
 -- Procedure DELETE tb_endereco
@@ -1005,14 +1018,18 @@ CREATE PROCEDURE sp_delete_endereco(valor_id INT)
 BEGIN
 	IF NOT EXISTS
 		(SELECT id_endereco FROM tb_endereco WHERE id_endereco = valor_id) THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =  'ID invalido';
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =  'ID inexistente';
     ELSE
 		DELETE FROM  tb_endereco
 		WHERE id_endereco = valor_id;
 	END IF;
 END //
 DELIMITER ;
+
 -- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+												-- TESTAR DAQUI EM DIANTE AINDA
+												-- TESTAR DAQUI EM DIANTE AINDA
+												-- TESTAR DAQUI EM DIANTE AINDA
 -- 14
 -- Procedure INSERT tb_usuario 
 -- DROP PROCEDURE sp_insert_usuario;

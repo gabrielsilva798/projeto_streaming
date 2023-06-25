@@ -38,7 +38,3 @@ END //
 DELIMITER ;
 
 
-
-
-
--- DROP TRIGGER tr_
