@@ -119,7 +119,8 @@ CREATE TABLE IF NOT EXISTS tb_filme(
   id_catalogo INT NOT NULL,
   oscar TINYINT NOT NULL,
   dt_atualizacao DATE NOT NULL,
-CONSTRAINT uq_id_catalogo_tb_filme UNIQUE tb_catalogo(id_catalogo)
+CONSTRAINT uq_id_catalogo_tb_filme UNIQUE tb_catalogo(id_catalogo),
+CONSTRAINT fk_id_catalogo_tb_filme FOREIGN KEY (id_catalogo) REFERENCES tb_catalogo(id_catalogo)
 ) AUTO_INCREMENT = 1;
 
 

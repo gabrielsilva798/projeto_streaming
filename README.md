@@ -148,8 +148,15 @@ tr_insert_episodio_serie
 
 
 
+
+
 <div align=center>
 
-  [![Email](./img/icons8-email-48.png)](gabrielsilva7988@gmail.com) 
+## Contatos
+</div>
+
+
+|  [![Linkedin](./img/icons8-linkedin-48.png)](https://www.linkedin.com/in/gabriel-silva-6988331a7) |[![Email](./img/icons8-email-48.png)](gabrielsilva7988@gmail.com) | 
+|-----------|-----------|
 
 </div>
